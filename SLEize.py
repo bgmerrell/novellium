@@ -16,10 +16,10 @@ r.rename_file('chromium.changes', 'chromium-browser.changes');
 # openSUSEish settings
 r.replace_line('master_preferences',
                '     "http://www.opensuse.org",',
-               '     "http://www.novell.com/linux,')
+               '     "http://www.novell.com/linux",')
 r.replace_line('master_preferences',
                '  "homepage": "http://www.opensuse.org",',
-               '  "homepage": "http://www.novell.com/linux,')
+               '  "homepage": "http://www.novell.com/linux",')
 
 # replace necessary lines in spec file
 r.replace_line('chromium-browser.spec',
