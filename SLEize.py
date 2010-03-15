@@ -30,6 +30,14 @@ r.remove_line('chromium-browser.spec',
 r.remove_line('chromium-browser.spec',
               'Obsoletes:      chromium-browser < %{version}')
 
+# don't forget the desktop file
+r.replace_line('chromium.desktop',
+               'Exec=chromium %u',
+               'Exec=chromium-browser %u')
+r.replace_line('chromium.desktop',
+               'Icon=chromium',
+               'Icon=chromium-browser')
+
 # fix patch
 r.replace_line('chromium-master-prefs-path.patch',
                '+    master_prefs = FilePath("/etc/chromium");',
