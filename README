@@ -1,0 +1,32 @@
+INTRODUCTION
+
+These tools are used to automate the process of porting the openSUSE version
+of Chromium to SUSE Linux Exterprise (SLE).  Some things that need to change,
+for example, are the bookmarks and the name of the package (which is chromium
+in openSUSE, but chromium-browser in SLE)
+
+STEPS
+
+1.  Copy the openSUSE:Contrib:Factory version of chromium to a subproject
+    of your IBS home (e.g., osc -A https://api.opensuse.org copypac -e -t
+    https://api.suse.de openSUSE:Contrib:Factory chromium
+    home:bgmerrell:chromium)
+
+2.  Check out the code that you copied in step one (e.g., osc -A
+    https://api.suse.de co home:bgmerrell:chromium)
+
+3.  Make your checked-out IBS chromium project your current working directory
+
+4.  Make any updates to the python files that need to be made.  replace.py is
+    a library module that contains abstract methods for SLEize.py to call.
+    Any real work should go into replace.py, and SLEize.py should simply be a
+    sequential list of simple method calls to replace.py.
+
+5.  Run SLEize.py
+
+6.  Check in your updates to IBS and test them
+
+7.  If you messed up, revert your changes in IBS and start back at step 1
+
+8.  Once everything is good, make sure you commit and push your changes to
+    these python tools
