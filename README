@@ -24,9 +24,20 @@ STEPS
 
 5.  Run SLEize.py
 
+6.  Run 'osc status' to see what files have changed.  Remove (osc rm) the old
+    files that are being replaced.  Add (osc add) the new files.
+
 6.  Check in your updates to IBS and test them
 
 7.  If you messed up, revert your changes in IBS and start back at step 1
 
 8.  Once everything is good, make sure you commit and push your changes to
     these python tools
+
+CONTACTS
+
+David Buck did the work on the initial chromium package for openSUSE.  He is
+dbuck at Novell.
+
+Tittiatcoke maintains the openSUSE package.  You can find him in
+#opensuse-buildservice on freenode.
